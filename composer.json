@@ -1,0 +1,26 @@
+{
+    "name": "efellemedia/fusioncms-installer",
+    "description": "Command line installer for FusionCMS.",
+    "keywords": ["fusioncms", "efelle"],
+    "authors": [
+        {
+            "name": "Shea Lewis",
+            "email": "shea@efelle.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Efelle\\FusionInstaller\\": "src/"
+        }
+    },
+    "require": {
+        "illuminate/support": "~5.1|~5.2",
+        "symfony/console": "~2.7|~3.0",
+        "symfony/process": "~2.7|~3.0",
+        "illuminate/filesystem": "~5.1|~5.2",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "bin": [
+        "fusion"
+    ]
+}
