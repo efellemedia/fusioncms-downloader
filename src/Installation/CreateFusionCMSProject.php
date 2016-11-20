@@ -38,12 +38,12 @@ class CreateFusionCMSProject
         }
 
         $this->verifyProjectDoesntExist(
-            $directory = ($input->getArgument('name')) ? getcwd().'/'.$input->getArgument('name') : getcwd()
+            $directory = ($this->command->input->getArgument('name')) ? getcwd().'/'.$this->command->input->getArgument('name') : getcwd()
         );
 
-        $output->writeln('<info>Preparing lift-off...</info>');
+        $this->command->output->writeln('<info>Preparing lift-off...</info>');
 
-        $output->writeln('<comment>And lift-off! Build something amazing.</comment>');
+        $this->command->output->writeln('<comment>And lift-off! Build something amazing.</comment>');
     }
 
     /**
