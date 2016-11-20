@@ -106,10 +106,20 @@ class CreateFusionCMSProject
      */
     protected function extract($zipFile, $directory)
     {
+        $tempDirectory = $directory.'-temp';
+
         $archive = new ZipArchive;
         $archive->open($zipFile);
-        $archive->extractTo($directory);
+        $archive->extractTo($tempDirectory);
         $archive->close();
+
+        $files = scandir($tempDirectory);
+        $root  = $tempDirectory.'/'.$files[2];
+
+		rename($root, $directory);
+
+        rmdir($tempDirectory);
+
         return $this;
     }
 
