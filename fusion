@@ -13,5 +13,6 @@ $app = new Symfony\Component\Console\Application(
 
 $app->add(new Efelle\FusionInstaller\RegisterCommand);
 $app->add(new Efelle\FusionInstaller\TokenCommand);
+$app->add(new Efelle\FusionInstaller\NewCommand);
 
 $app->run();
