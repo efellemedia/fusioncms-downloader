@@ -1,4 +1,4 @@
-# FusionCMS Installer
+# FusionCMS Downloader
 
 ## Installation
 
@@ -16,7 +16,7 @@ After purchasing a FusionCMS license, run the `fusion register` command with you
 fusion register token-value
 ```
 
-### 3. Install FusionCMS!
+### 3. Download FusionCMS!
 Once your FusionCMS client has been registered, you can run the `new` command to create new projects:
 
 ```
