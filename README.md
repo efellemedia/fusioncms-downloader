@@ -3,10 +3,10 @@
 ## Installation
 
 ### 1. Install Globally
-Use Composer to install the FusionCMS installer globally:
+Use Composer to install the FusionCMS downloader globally:
 
 ```
-composer global require efellemedia/fusioncms-installer
+composer global require efellemedia/fusioncms-downloader
 ```
 
 ### 2. Register Token
