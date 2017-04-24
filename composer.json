@@ -1,6 +1,6 @@
 {
-    "name": "efellemedia/fusioncms-installer",
-    "description": "Command line installer for FusionCMS.",
+    "name": "efellemedia/fusioncms-downloader",
+    "description": "Command line downloader for FusionCMS.",
     "keywords": ["fusioncms", "efelle"],
     "authors": [
         {
