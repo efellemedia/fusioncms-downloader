@@ -11,17 +11,19 @@ trait InteractsWithLaunchpadAPI
      *
      * @var string
      */
-    protected $launchpadUrl = 'http://launchpad.efelle.co/api';
+    protected $launchpadUrl = 'https://launchpad.efelle.co/api';
 
     /**
      * Get the latest version of FusionCMS.
      *
      * @return string
      */
-    protected function latestFusionCMSRelease()
+    protected function latestFusionCMSRelease($token)
     {
-        return json_decode((string) (new HttpClient)->get(
-            $this->launchpadUrl('/releases/latest')
-        )->getBody())->name;
+        return json_decode((string) (new HttpClient)->post($this->launchpadUrl('/releases/latest'), [
+            'form_params' => [
+                'token' => $token
+            ]
+        ])->getBody())->name;
     }
 }

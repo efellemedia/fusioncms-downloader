@@ -90,7 +90,11 @@ class CreateFusionCMSProject
     protected function download($zipFile)
     {
         $token    = $this->readToken();
-        $response = (new Client)->get($this->launchpadUrl.'/release/download/'.$token);
+        $response = (new Client)->post($this->launchpadUrl.'/release/download', [
+            'form_params' => [
+                'token' => $token
+            ]
+        ]);
 
         file_put_contents($zipFile, $response->getBody());
 
