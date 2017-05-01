@@ -58,7 +58,11 @@ class RegisterCommand extends Command
     protected function valid($token)
     {
         try {
-            (new HttpClient)->get($this->launchpadUrl.'/token/validate/'.$token);
+            (new HttpClient)->post($this->launchpadUrl.'/token/validate/', [
+                'form_params' => [
+                    'token' => $token
+                ]
+            ]);
 
             return true;
         } catch (Exception $e) {
