@@ -22,7 +22,8 @@ trait InteractsWithLaunchpadAPI
     {
         return json_decode((string) (new HttpClient)->post($this->launchpadUrl('/releases/latest'), [
             'form_params' => [
-                'token' => $token
+                'token' => $token,
+                'local' => true,
             ]
         ])->getBody())->name;
     }
