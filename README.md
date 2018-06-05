@@ -22,3 +22,10 @@ Once your FusionCMS client has been registered, you can run the `new` command to
 ```
 fusion new project-name
 ```
+
+#### Specific Release
+You may specify the release you wish to download in the instance you need an older version of the CMS through the `--release` option flag:
+
+```
+fusion new project-name --release="v5.3.10"
+```
