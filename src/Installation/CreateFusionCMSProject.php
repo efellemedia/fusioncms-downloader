@@ -25,11 +25,11 @@ class CreateFusionCMSProject
      * @param  string  $name
      * @return void
      */
-    public function __construct(NewCommand $command, $name, $version)
+    public function __construct(NewCommand $command, $name, $release)
     {
         $this->name    = $name;
         $this->command = $command;
-        $this->version = $version;
+        $this->release = $release;
     }
 
     /**
@@ -85,14 +85,14 @@ class CreateFusionCMSProject
      * Download the temporary Zip to the given file.
      *
      * @param  string  $zipFile
-     * @param  string  $version
+     * @param  string  $release
      * @return $this
      */
     protected function download($zipFile)
     {
         $token = $this->readToken();
         $url   = $this->launchpadUrl.'/release/download'
-            .(is_null($this->version) ? null : $this->version);
+            .(is_null($this->release) ? null : '/'.$this->release);
 
         $response = (new Client)->post($url, [
             'form_params' => [
