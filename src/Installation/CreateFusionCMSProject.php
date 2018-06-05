@@ -25,11 +25,11 @@ class CreateFusionCMSProject
      * @param  string  $name
      * @return void
      */
-    public function __construct(NewCommand $command, $name, $release)
+    public function __construct(NewCommand $command, $name, $version)
     {
         $this->name    = $name;
         $this->command = $command;
-        $this->release = $release;
+        $this->version = $version;
     }
 
     /**
@@ -92,7 +92,7 @@ class CreateFusionCMSProject
     {
         $token = $this->readToken();
         $url   = $this->launchpadUrl.'/release/download'
-            .(is_null($this->release) ? null : $this->release);
+            .(is_null($this->version) ? null : $this->version);
 
         $response = (new Client)->post($url, [
             'form_params' => [

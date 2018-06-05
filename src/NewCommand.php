@@ -21,7 +21,7 @@ class NewCommand extends Command
             ->setName('new')
             ->setDescription('Create a new FusionCMS project')
             ->addArgument('name', InputArgument::REQUIRED, 'The name of the project')
-            ->addOption('release', null, InputOption::VALUE_REQUIRED, 'Specify the version of FusionCMS to download', null);
+            ->addOption('version', null, InputOption::VALUE_REQUIRED, 'Specify the version of FusionCMS to download', null);
     }
 
     /**
@@ -43,7 +43,7 @@ class NewCommand extends Command
         ];
 
         foreach ($installers as $installer) {
-            (new $installer($this, $input->getArgument('name'), $input->getOption('release')))->install();
+            (new $installer($this, $input->getArgument('name'), $input->getOption('version')))->install();
         }
     }
 }
