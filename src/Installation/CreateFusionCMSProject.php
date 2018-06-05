@@ -25,10 +25,11 @@ class CreateFusionCMSProject
      * @param  string  $name
      * @return void
      */
-    public function __construct(NewCommand $command, $name)
+    public function __construct(NewCommand $command, $name, $release)
     {
         $this->name    = $name;
         $this->command = $command;
+        $this->release = $release;
     }
 
     /**
@@ -89,8 +90,11 @@ class CreateFusionCMSProject
      */
     protected function download($zipFile)
     {
-        $token    = $this->readToken();
-        $response = (new Client)->post($this->launchpadUrl.'/release/download', [
+        $token = $this->readToken();
+        $url   = $this->launchpadUrl.'/release/download'
+            .(is_null($this->release) ? null : $this->release);
+
+        $response = (new Client)->post($url, [
             'form_params' => [
                 'token' => $token
             ]
