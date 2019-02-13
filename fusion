@@ -8,7 +8,7 @@ if (file_exists(__DIR__.'/../../autoload.php')) {
 }
 
 $app = new Symfony\Component\Console\Application(
-    'FusionCMS Installer', '1.0'
+    'FusionCMS Installer', '1.1'
 );
 
 $app->add(new Efelle\FusionInstaller\RegisterCommand);
