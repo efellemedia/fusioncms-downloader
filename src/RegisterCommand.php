@@ -47,6 +47,8 @@ class RegisterCommand extends Command
         $this->storeToken($input->getArgument('token'));
 
         $this->tokenIsValid($output);
+
+        return 0;
     }
 
     /**

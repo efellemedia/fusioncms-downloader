@@ -45,5 +45,7 @@ class NewCommand extends Command
         foreach ($installers as $installer) {
             (new $installer($this, $input->getArgument('name'), $input->getArgument('version')))->install();
         }
+
+        return 0;
     }
 }
