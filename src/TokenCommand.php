@@ -32,5 +32,7 @@ class TokenCommand extends Command
     public function execute(InputInterface $input, OutputInterface $output)
     {
         $output->writeln('<info>FusionCMS Registration Token:</info> '.$this->readToken());
+
+        return 0;
     }
 }
