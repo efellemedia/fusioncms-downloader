@@ -14,9 +14,9 @@
         }
     },
     "require": {
-        "symfony/console": "5.0.1",
-        "symfony/process": "5.0.1",
-        "guzzlehttp/guzzle": "~6.0"
+        "symfony/console": "^5.0",
+        "symfony/process": "^5.0",
+        "guzzlehttp/guzzle": "^7.0"
     },
     "bin": [
         "fusion"
