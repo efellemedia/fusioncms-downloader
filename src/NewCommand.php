@@ -10,6 +10,10 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class NewCommand extends Command
 {
+    public $input;
+    public $output;
+    public $path;
+
     /**
      * Configure the command options.
      *

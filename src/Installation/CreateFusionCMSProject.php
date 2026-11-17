@@ -17,6 +17,7 @@ class CreateFusionCMSProject
 
     protected $command;
     protected $name;
+    protected $release;
 
     /**
      * Create a new installation helper instance.
